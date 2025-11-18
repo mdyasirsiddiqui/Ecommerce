@@ -1,16 +1,17 @@
 # Ecommerce Project
 
 ## 📌 Overview
-This is a Spring Boot based ecommerce project that integrates with the [FakeStore API](https://fakestoreapi.com/) to fetch product categories.  
-It demonstrates a clean layered architecture with **Controller → Service → Gateway → Retrofit API**, using DTOs for structured responses.
+This is a Spring Boot based ecommerce project that integrates with the [FakeStore API](https://fakestoreapi.com/) to fetch product categories and products.  
+It demonstrates a clean layered architecture with **Controller → Service → Gateway → API Client**, using DTOs for structured responses.
 
 ---
 
 ## 🚀 Features
 - REST API endpoint: `/categories`
-- Fetches categories from FakeStore API (`https://fakestoreapi.com/products/categories`)
-- Uses **Retrofit2 + Gson** for external API calls
-- DTOs for clean data transfer
+    - Fetches categories from FakeStore API (`https://fakestoreapi.com/products/categories`)
+- REST API endpoint: `/products`
+    - Fetches all products from FakeStore API (`https://fakestoreapi.com/products`)
+- Uses **WebClient** and **Retrofit** for external API calls
 - Logging with **Slf4j**
 - Built with **Gradle**
 
@@ -19,46 +20,21 @@ It demonstrates a clean layered architecture with **Controller → Service → G
 ## 🛠 Tech Stack
 - **Java 17**
 - **Spring Boot**
-- **Retrofit2**
+- **WebClient**
 - **Lombok**
 - **Gradle**
 
 ---
 
-## 📌 Versions / Changelog
+## Markdown
 
-### v1.0.0
-- Initial version
-- Implemented `/categories` endpoint
-- Using `List<String>` as DTO for categories
-- Integrated with FakeStore API (`/products/categories`)
+#v1.1.0
+Implemented '/getAllProducts' endpoint Integrated with FakeStore API using WebClient.
+
+# v1.0.0 
+Initial version Implemented `/categories` endpoint Integrated with FakeStore API using Retrofit.
 
 -------
 
-## 📂 Project Structure
-ecommerce/ │
-├── README.md
-├── build.gradle
-├── settings.gradle
-└── src/ 
-└── main/
-└── java/
-└── com/example/ecommerce/ecommerce
-├── EcommerceApplication.java # Main Spring Boot application │
-├── controller/ # REST Controllers │
-└── CategoryController.java │
-├── service/ # Business logic layer │
-├── CategoryService.java │
-└── ICategoryService.java │
-├── Gateway/ # External API integration │
-├── FakeStoreCategoryGateway.java │
-├── ICategoryGateway.java │
-└── API/ │
-└── FakeStoreCategoryAPI.java │
-├── dto/ # Data Transfer Objects │
-├── CategoryDTO.java │
-└── FakeStoreCategoryResponseDTO.java (future use) │
-└── configuration/ # Config classes 
-└── RetroConfig.java
 
 

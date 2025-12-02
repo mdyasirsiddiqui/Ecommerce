@@ -7,6 +7,7 @@ import lombok.*;
 @Getter
 @NoArgsConstructor
 @Setter
+@ToString
 public class FakeStoreProductResponseDTO {
     private Integer id;
     private String title;

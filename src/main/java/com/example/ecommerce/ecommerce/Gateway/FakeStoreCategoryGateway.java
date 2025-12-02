@@ -1,8 +1,7 @@
 package com.example.ecommerce.ecommerce.Gateway;
 
 import com.example.ecommerce.ecommerce.Gateway.API.FakeStoreCategoryAPI;
-import com.example.ecommerce.ecommerce.dto.CategoryDTO;
-import com.example.ecommerce.ecommerce.dto.FakeStoreCategoryResponseDTO;
+import com.example.ecommerce.ecommerce.dto.FakeStoreProductResponseDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 @Slf4j
-@Component
+@Component()
 public class FakeStoreCategoryGateway implements ICategoryGateway{
     private FakeStoreCategoryAPI fakeStoreCategoryAPI;
     FakeStoreCategoryGateway(FakeStoreCategoryAPI fakeStoreCategoryAPI)
@@ -28,4 +27,5 @@ public class FakeStoreCategoryGateway implements ICategoryGateway{
         }
         return new ArrayList<>(response);
     }
+
 }

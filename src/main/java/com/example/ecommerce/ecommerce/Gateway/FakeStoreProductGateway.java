@@ -21,13 +21,26 @@ public class FakeStoreProductGateway implements IProductGateway {
 //    }
     @Override
     public List<FakeStoreProductResponseDTO> getALLProducts() {
-        log.info("in ProductGateway class");
-        return webClient.get()
+        log.info("in getALLProducts method in FakestoreProductGateway");
+        List<FakeStoreProductResponseDTO> product= webClient.get()
                 .uri("/products")
                 .retrieve()
                 .bodyToFlux(FakeStoreProductResponseDTO.class)
                 .collectList()
                 .block();
+        log.debug("product {}",product);
+        return product;
+    }
+
+    @Override
+    public FakeStoreProductResponseDTO getProductById(String id) {
+        log.info("in getProductById method in FakestoreProductGateway");
+        FakeStoreProductResponseDTO resp=webClient.get()
+                .uri("/products/"+id)
+                .retrieve()
+                .bodyToMono(FakeStoreProductResponseDTO.class)
+                .block();
+        return resp;
     }
 }
 

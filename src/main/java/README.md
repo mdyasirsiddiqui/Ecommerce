@@ -12,6 +12,7 @@ It demonstrates a clean layered architecture with **Controller → Service → G
 - REST API endpoint: `/products`
     - Fetches all products from FakeStore API (`https://fakestoreapi.com/products`)
 - Uses **WebClient** and **Retrofit** for external API calls
+- REST API ep getAllCategories ('/categories') using @Qualifier and using RestTemplate
 - Logging with **Slf4j**
 - Built with **Gradle**
 
@@ -27,8 +28,10 @@ It demonstrates a clean layered architecture with **Controller → Service → G
 ---
 
 ## Markdown
+# v1.1.1
+Implement '/getAllCategories' endpoint Integrated with RestTemplate. Using @Qualifier for RestTemplate and aslo implement MODEL MAPPER for DTO Conversion.
 
-#v1.1.0
+# v1.1.0
 Implemented '/getAllProducts' endpoint Integrated with FakeStore API using WebClient.
 
 # v1.0.0 

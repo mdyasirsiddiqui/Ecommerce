@@ -19,15 +19,19 @@ It demonstrates a clean layered architecture with **Controller → Service → G
 ---
 
 ## 🛠 Tech Stack
-- **Java 17**
+- **Java 21**
 - **Spring Boot**
 - **WebClient**
+- **Retrofit**
+- **Rst Template**
 - **Lombok**
 - **Gradle**
 
 ---
 
 ## Markdown
+# v1.1.2
+-- Add Entity using JPA and add database connectivity.
 # v1.1.1
 Implement '/getAllCategories' endpoint Integrated with RestTemplate. Using @Qualifier for RestTemplate and aslo implement MODEL MAPPER for DTO Conversion.
 

@@ -1,14 +1,12 @@
 package com.example.ecommerce.ecommerce.controller;
 
 import com.example.ecommerce.ecommerce.dto.FakeStoreProductResponseDTO;
-import com.example.ecommerce.ecommerce.dto.ProductDTO;
+import com.example.ecommerce.ecommerce.dto.ProductFakeStoreDTO;
+import com.example.ecommerce.ecommerce.service.FakeStoreProductService;
 import com.example.ecommerce.ecommerce.service.IProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,9 +29,15 @@ public class ProductController{
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProductDTO> getProductById(@PathVariable String id)
+    public ResponseEntity<FakeStoreProductResponseDTO> getProductById(@PathVariable Long id)
     {
         return ResponseEntity.ok(iProductService.getProductById(id));
+    }
+
+    @PostMapping()
+    public ResponseEntity<FakeStoreProductResponseDTO> addProduct(@RequestBody FakeStoreProductResponseDTO dto)
+    {
+        return ResponseEntity.ok(iProductService.addProduct(dto));
     }
 
 }

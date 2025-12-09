@@ -1,28 +1,32 @@
 package com.example.ecommerce.ecommerce.service;
 
-import com.example.ecommerce.ecommerce.Gateway.ICategoryGateway;
-import com.example.ecommerce.ecommerce.Gateway.IProductGateway;
-import com.example.ecommerce.ecommerce.dto.FakeStoreProductResponseDTO;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.example.ecommerce.ecommerce.Mapper.CategoryMapper;
+import com.example.ecommerce.ecommerce.dto.FakeStoreCategoryDTO;
+import com.example.ecommerce.ecommerce.entity.Category;
+import com.example.ecommerce.ecommerce.repository.CategoryRepository;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
-@Slf4j
 @Service
+@Primary
 public class CategoryService implements ICategoryService{
 
-    private ICategoryGateway iCategoryGateway;
-    CategoryService(@Qualifier("thisOneIsRestTemplate") ICategoryGateway iCategoryGateway)
+    private CategoryRepository categoryRepository;
+    public CategoryService(CategoryRepository categoryRepository)
     {
-        this.iCategoryGateway=iCategoryGateway;
+        this.categoryRepository=categoryRepository;
+    }
+    @Override
+    public List<String> getAllCategories() throws IOException {
+        return List.of();
     }
 
     @Override
-    public List<String> getAllCategories() throws IOException {
-        log.info("in CategoryService class");
-        return iCategoryGateway.getAllCategories();
+    public FakeStoreCategoryDTO saveCategory(FakeStoreCategoryDTO fakeStoreCategoryDTO) {
+        Category saved= (Category) categoryRepository.save(CategoryMapper.toEntity(fakeStoreCategoryDTO));
+        return CategoryMapper.toDto(saved);
     }
 
 }

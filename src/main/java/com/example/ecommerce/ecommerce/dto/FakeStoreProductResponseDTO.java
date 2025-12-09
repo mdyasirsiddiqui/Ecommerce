@@ -1,5 +1,6 @@
 package com.example.ecommerce.ecommerce.dto;
 
+import com.example.ecommerce.ecommerce.entity.Category;
 import lombok.*;
 
 @Builder
@@ -9,11 +10,11 @@ import lombok.*;
 @Setter
 @ToString
 public class FakeStoreProductResponseDTO {
-    private Integer id;
+    private Long id;
     private String title;
     private Double price;
     private String description;
-    private String category;
+    private Long categoryId;
     private String image;
 
 }

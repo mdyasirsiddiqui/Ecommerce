@@ -28,7 +28,7 @@ public class BaseEntity {
     {
         Instant now= Instant.now();
         this.createdAt=now;
-        this.createdAt=now;
+        this.updatedAt = now;
     }
     @PreUpdate
     protected   void onUpdate()

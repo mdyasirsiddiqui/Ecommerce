@@ -2,7 +2,9 @@ package com.example.ecommerce.ecommerce.controller;
 
 import com.example.ecommerce.ecommerce.dto.FakeStoreProductResponseDTO;
 import com.example.ecommerce.ecommerce.dto.ProductFakeStoreDTO;
+import com.example.ecommerce.ecommerce.dto.ProductWithCategoryDTO;
 import com.example.ecommerce.ecommerce.service.FakeStoreProductService;
+import com.example.ecommerce.ecommerce.service.ICategoryService;
 import com.example.ecommerce.ecommerce.service.IProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +40,12 @@ public class ProductController{
     public ResponseEntity<FakeStoreProductResponseDTO> addProduct(@RequestBody FakeStoreProductResponseDTO dto)
     {
         return ResponseEntity.ok(iProductService.addProduct(dto));
+    }
+
+    @GetMapping("/{id}/details")
+    public  ResponseEntity<ProductWithCategoryDTO> getProductWithCategory(@PathVariable Long id)
+    {
+        return ResponseEntity.ok(iProductService.getProductWithCategory(id));
     }
 
 }

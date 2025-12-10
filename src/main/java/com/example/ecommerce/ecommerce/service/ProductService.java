@@ -2,6 +2,7 @@ package com.example.ecommerce.ecommerce.service;
 
 import com.example.ecommerce.ecommerce.Mapper.ProductMapper;
 import com.example.ecommerce.ecommerce.dto.FakeStoreProductResponseDTO;
+import com.example.ecommerce.ecommerce.dto.ProductWithCategoryDTO;
 import com.example.ecommerce.ecommerce.entity.Category;
 import com.example.ecommerce.ecommerce.entity.Product;
 import com.example.ecommerce.ecommerce.repository.CategoryRepository;
@@ -53,4 +54,13 @@ public class ProductService implements IProductService {
         // 4. Convert back to DTO for response
         return ProductMapper.toDto(saved);
     }
+
+    @Override
+    public ProductWithCategoryDTO getProductWithCategory(Long id) {
+        return productRepository.findById(id)
+                .map(ProductMapper::toProductWithCategory)
+                .orElseThrow(()-> new RuntimeException("\"Product id \" + id + \" not found\""));
+    }
+
+
 }

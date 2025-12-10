@@ -9,7 +9,7 @@ public class CategoryMapper {
     {
         return FakeStoreCategoryDTO.builder()
                 .name(category.getName())
-                //.id(category.getId())
+                .id(category.getId())
                 .build();
     }
 

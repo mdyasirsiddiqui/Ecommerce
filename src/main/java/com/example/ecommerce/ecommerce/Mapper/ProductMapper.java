@@ -1,6 +1,7 @@
 package com.example.ecommerce.ecommerce.Mapper;
 
 import com.example.ecommerce.ecommerce.dto.FakeStoreProductResponseDTO;
+import com.example.ecommerce.ecommerce.dto.ProductWithCategoryDTO;
 import com.example.ecommerce.ecommerce.entity.Category;
 import com.example.ecommerce.ecommerce.entity.Product;
 import org.springframework.stereotype.Component;
@@ -28,6 +29,18 @@ public class ProductMapper {
                 .description(fakeStoreProductResponseDTO.getDescription())
                 .category(category)
                 .image(fakeStoreProductResponseDTO.getImage())
+                .build();
+    }
+
+    public static ProductWithCategoryDTO toProductWithCategory(Product product)
+    {
+        return ProductWithCategoryDTO.builder()
+                .id(product.getId())
+                .title(product.getTitle())
+                .price(product.getPrice())
+                .description(product.getDescription())
+                .categoryDTO(CategoryMapper.toDto(product.getCategory()))
+                .image(product.getImage())
                 .build();
     }
 }

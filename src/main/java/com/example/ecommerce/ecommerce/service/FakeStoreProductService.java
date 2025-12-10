@@ -4,6 +4,7 @@ import com.example.ecommerce.ecommerce.Gateway.IProductGateway;
 import com.example.ecommerce.ecommerce.Mapper.FakeStoreResponseToDtoMapper;
 import com.example.ecommerce.ecommerce.dto.FakeStoreProductResponseDTO;
 import com.example.ecommerce.ecommerce.dto.ProductFakeStoreDTO;
+import com.example.ecommerce.ecommerce.dto.ProductWithCategoryDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,12 @@ import java.util.List;
 public class FakeStoreProductService implements IProductService{
 
 private FakeStoreResponseToDtoMapper fakeStoreResponseToDtoMapper;
+
+    @Override
+    public ProductWithCategoryDTO getProductWithCategory(Long id) {
+        return null;
+    }
+
     private IProductGateway iProductGateway;
     public FakeStoreProductService(IProductGateway iProductGateway, FakeStoreResponseToDtoMapper fakeStoreResponseToDtoMapper)
     {

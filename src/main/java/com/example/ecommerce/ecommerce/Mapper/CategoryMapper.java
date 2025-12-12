@@ -1,7 +1,9 @@
 package com.example.ecommerce.ecommerce.Mapper;
 
+import com.example.ecommerce.ecommerce.dto.AllProductsOfCategoryDTO;
 import com.example.ecommerce.ecommerce.dto.FakeStoreCategoryDTO;
 import com.example.ecommerce.ecommerce.entity.Category;
+import com.example.ecommerce.ecommerce.entity.Product;
 
 public class CategoryMapper {
 

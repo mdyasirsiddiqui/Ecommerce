@@ -4,7 +4,8 @@ import com.example.ecommerce.ecommerce.dto.FakeStoreProductResponseDTO;
 import com.example.ecommerce.ecommerce.dto.ProductWithCategoryDTO;
 import com.example.ecommerce.ecommerce.entity.Category;
 import com.example.ecommerce.ecommerce.entity.Product;
-import org.springframework.stereotype.Component;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class ProductMapper {
@@ -42,5 +43,11 @@ public class ProductMapper {
                 .categoryDTO(CategoryMapper.toDto(product.getCategory()))
                 .image(product.getImage())
                 .build();
+    }
+    public static List<FakeStoreProductResponseDTO> toDTOList(List<Product> productsList)
+    {
+        return productsList.stream()
+                .map(ProductMapper::toDto)
+                .collect((Collectors.toList()));
     }
 }

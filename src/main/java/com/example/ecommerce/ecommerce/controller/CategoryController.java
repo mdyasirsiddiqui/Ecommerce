@@ -1,5 +1,6 @@
 package com.example.ecommerce.ecommerce.controller;
 
+import com.example.ecommerce.ecommerce.dto.AllProductsOfCategoryDTO;
 import com.example.ecommerce.ecommerce.dto.FakeStoreCategoryDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -40,6 +41,14 @@ public class CategoryController {
             log.error("error in serialisation",e);
         }
             return ResponseEntity.ok(iCategoryService.saveCategory(fakeStoreCategoryDTO));
+
+    }
+    @GetMapping("/{categoryId}")
+    public ResponseEntity<AllProductsOfCategoryDTO> getAllProductOfCategory(@PathVariable Long categoryId) throws Exception {
+
+        AllProductsOfCategoryDTO dto = iCategoryService.getAllProductsForCategory(categoryId);
+        return ResponseEntity.ok(dto);
+
 
     }
 }

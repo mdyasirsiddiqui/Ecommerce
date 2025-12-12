@@ -1,4 +1,5 @@
 package com.example.ecommerce.ecommerce.service;
+import com.example.ecommerce.ecommerce.dto.AllProductsOfCategoryDTO;
 import com.example.ecommerce.ecommerce.dto.FakeStoreCategoryDTO;
 import com.example.ecommerce.ecommerce.dto.ProductWithCategoryDTO;
 import org.springframework.stereotype.Component;
@@ -10,5 +11,6 @@ public interface ICategoryService {
 
     public List<String> getAllCategories() throws IOException;
     public FakeStoreCategoryDTO saveCategory(FakeStoreCategoryDTO fakeStoreCategoryDTO) ;
+    public AllProductsOfCategoryDTO getAllProductsForCategory(Long categoryId) throws Exception;
 
 }

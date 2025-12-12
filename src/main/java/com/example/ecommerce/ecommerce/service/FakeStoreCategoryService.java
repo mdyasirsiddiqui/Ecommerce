@@ -1,6 +1,7 @@
 package com.example.ecommerce.ecommerce.service;
 
 import com.example.ecommerce.ecommerce.Gateway.ICategoryGateway;
+import com.example.ecommerce.ecommerce.dto.AllProductsOfCategoryDTO;
 import com.example.ecommerce.ecommerce.dto.FakeStoreCategoryDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -16,6 +17,11 @@ public class FakeStoreCategoryService implements ICategoryService{
 
     @Override
     public FakeStoreCategoryDTO saveCategory(FakeStoreCategoryDTO fakeStoreCategoryDTO) {
+        return null;
+    }
+
+    @Override
+    public AllProductsOfCategoryDTO getAllProductsForCategory(Long categoryId) throws Exception{
         return null;
     }
 

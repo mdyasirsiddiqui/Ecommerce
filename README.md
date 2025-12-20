@@ -30,8 +30,13 @@ It demonstrates a clean layered architecture with **Controller → Service → G
 ---
 
 ## Markdown
+
+# v1.1.4
+-- Implementing Flyway migration and adding db versions
+
 # v1.1.3
 -- Implement Global Exception Handling
+
 # v1.1.2
 -- Add Entity using JPA and add database connectivity.
 # v1.1.1

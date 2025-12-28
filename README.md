@@ -30,6 +30,8 @@ It demonstrates a clean layered architecture with **Controller → Service → G
 ---
 
 ## Markdown
+# v1.1.5
+-- Service Registered at eureka client
 
 # v1.1.4
 -- Implementing Flyway migration and adding db versions
